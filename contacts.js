@@ -3,10 +3,20 @@ const path = require('path');
 const contactsPath = path.join('./db/contacts.json');
 
 // TODO: задокументувати кожну функцію
-const listContacts = async () => {
-  const result = await fs.readFile(contactsPath);
-  return JSON.parse(result);
-};
+
+async function listContacts() {
+  try {
+    const data = await fs.readFile(contactsPath);
+    const result = JSON.parse(data);
+    console.table(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+// const listContacts = async () => {
+//   const result = await fs.readFile(contactsPath);
+//   return JSON.parse(result);
+// };
 
 const getContactById = async id => {
   const contacts = await listContacts();
