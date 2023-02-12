@@ -1,5 +1,4 @@
-const { listContacts, getContactById } = require('./contacts.js');
-
+const { contactsPath, listContacts, getContactById } = require('./contacts.js');
 
 // listContacts()
-getContactById(2)
+// getContactById(3);
